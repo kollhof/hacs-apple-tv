@@ -22,8 +22,8 @@ jobs:
     - name: set version
       id: vars
       run: |
-        calculated_sha=$(git rev-parse --short ${{ github.sha }})
-        echo "RELEASE_VERSION=$calculated_sha" >> $GITHUB_ENV
+        rel_version=$(date +'%Y-%m-%d.%H%M%S')
+        echo "RELEASE_VERSION=$rel_version" >> $GITHUB_ENV
 
     - name: create release
       id: create_release
@@ -34,7 +34,7 @@ jobs:
         draft: false
         prerelease: false
         release_name: ${{ env.RELEASE_VERSION }}
-        tag_name: "v${{ env.RELEASE_VERSION }}"
+        tag_name: ${{ env.RELEASE_VERSION }}
         body: ""
 
     - name: upload artifact

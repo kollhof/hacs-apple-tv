@@ -1,17 +1,21 @@
 rm -rf ./build
-mkdir -p ./build/custom_components
+mkdir -p ./build
+
+version="${RELEASE_VERSION:='0.0.1-dev'}"
+echo " --- building version ${version} ---"
 
 # copy sources
 cp -r ./home-assistant-core/homeassistant/components/apple_tv \
-  ./build/custom_components/
+  ./build/
 
-cp README.md ./build/
-cp hacs.json ./build/
+cp README.md ./build/apple_tv/
+cp hacs.json ./build/apple_tv/
+
 
 # add version entry if not present
-jq '. + {version: "0.0.1-dev"} + .' \
+jq ". + {version: \"$version\"} + ." \
   ./home-assistant-core/homeassistant/components/apple_tv/manifest.json \
-  > ./build/custom_components/apple_tv/manifest.json
+  > ./build/apple_tv/manifest.json
 
-(cd build && zip -r ./hacs.zip README.md hacs.json ./custom_components)
+(cd build/apple_tv && zip -r ../hacs.zip .)
 

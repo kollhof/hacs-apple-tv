@@ -14,16 +14,16 @@ jobs:
       with:
         submodules: recursive
 
-    - name: build release
-      env:
-        CI: true
-      run: ./scripts/build.sh
-
     - name: set version
       id: vars
       run: |
         rel_version=$(date +'%Y-%m-%d.%H%M%S')
         echo "RELEASE_VERSION=$rel_version" >> $GITHUB_ENV
+
+    - name: build release
+      env:
+        CI: true
+      run: ./scripts/build.sh
 
     - name: create release
       id: create_release

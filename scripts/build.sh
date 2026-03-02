@@ -1,8 +1,7 @@
 rm -rf ./build
 mkdir -p ./build
 
-version="${RELEASE_VERSION:='0.0.1-dev'}"
-echo " --- building version ${version} ---"
+echo "--- building version ${RELEASE_VERSION} ---"
 
 # copy sources
 cp -r ./home-assistant-core/homeassistant/components/apple_tv \
@@ -13,7 +12,7 @@ cp hacs.json ./build/apple_tv/
 
 
 # add version entry if not present
-jq ". + {version: \"$version\"} + ." \
+jq '. + {version: "0.0.1"} + {name: "Apple TV - DEV"}' \
   ./home-assistant-core/homeassistant/components/apple_tv/manifest.json \
   > ./build/apple_tv/manifest.json
 

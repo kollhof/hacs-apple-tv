@@ -12,7 +12,7 @@ cp hacs.json ./build/apple_tv/
 
 
 # add version entry if not present
-jq '. + {version: "0.0.1"} + {name: "Apple TV - DEV"}' \
+jq '. + {version: "0.0.1", name: "Apple TV - DEV"}' \
   ./home-assistant-core/homeassistant/components/apple_tv/manifest.json \
   > ./build/apple_tv/manifest.json
 

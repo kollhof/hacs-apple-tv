@@ -1,0 +1,17 @@
+name: build artifacts
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    - name: build release
+      env:
+        CI: true
+      run: ./scripts/build.sh

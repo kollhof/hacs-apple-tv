@@ -1,0 +1,4 @@
+[submodule "home-assistant-core"]
+	path = home-assistant-core
+	url = https://github.com/kollhof/home-assistant-core.git
+	branch = add-apple_tv-grouping-support

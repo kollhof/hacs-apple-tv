@@ -1,9 +1,0 @@
-{
-  "domain": "apple_tv",
-  "name": "Apple TV - DEV",
-  "version": "0.1.0-dev",
-  "codeowners": ["@kollhof"],
-  "config_flow": true,
-  "documentation": "https://github.com/kollhof/hacs-apple-tv",
-  "issue_tracker": "https://github.com/kollhof/hacs-apple-tv/issues"
-}

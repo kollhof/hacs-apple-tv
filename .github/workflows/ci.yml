@@ -15,9 +15,3 @@ jobs:
       env:
         CI: true
       run: ./scripts/build.sh
-
-    - name: upload aritfact
-      uses: actions/upload-artifact@v4
-      with:
-        name: hacs component
-        path: build/hacs.zip

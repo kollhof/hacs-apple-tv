@@ -1,4 +1,4 @@
-# AppleTV custom component
+# Apple TV integration with grouping support
 
 This is homeassistant's [Apple TV](https://www.home-assistant.io/integrations/apple_tv/) integration with added grouping capabilities.
 

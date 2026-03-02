@@ -1,6 +1,6 @@
 {
   "domain": "apple_tv",
-  "name": "Apple TV",
+  "name": "Apple TV - DEV",
   "version": "0.1.0-dev",
   "codeowners": ["@kollhof"],
   "config_flow": true,
